@@ -1,0 +1,320 @@
+:root {
+    --color-p: #a2a2a2;
+    --main-color: #19c8fa;
+    --duration: 0.3s;
+    --transparent-color: rgb(15 116 143 / 70%);
+}
+
+/*********Start************  global rules  ******************بسم الله********/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/******** End  ************  global rules  ******************الحمد لله********/
+/*********Start************  Components  ******************بسم الله********/
+/* start main heading*/
+.main-heading{
+    text-align: center;/*true*/
+    margin-bottom: 100px;
+}
+.main-heading h2{
+    font-size: 40px; /*true*/
+    font-weight: normal; /*true*/
+    text-transform: uppercase; /*true*/
+    margin-bottom: 70px; /*true*/
+    position: relative; /*true*/
+}
+.main-heading h2:before{
+    content: '';
+    position: absolute; /*true*/
+    left: 50%;/*true*/
+    transform: translateX(-50%);/*true*/
+    height: 2px;/*true*/
+    background: #333; /*true*/
+    bottom: -30px; /*true*/
+    width: 120px; /*true*/
+}
+.main-heading h2:after{
+    content: '';
+    position: absolute; /*true*/
+    left: 50%; /*true*/
+    transform: translateX(-50%); /*true*/
+    width: 14px;/*true*/
+    height: 14px; /*true*/
+    bottom: -38px; /*true*/
+    border: 2px solid #333; /*true*/
+    border-radius: 50%; /*true*/
+    background: white;/*true*/
+}
+.main-heading p{
+    width: 550px;
+    margin: 0 auto;
+    color: #777;
+    line-height: 2;
+    max-height: 100%;
+}
+/* start main heading*/
+
+/******** End  ************  Components  ******************الحمد لله********/
+
+/*start header */
+header {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+}
+
+header .content {
+    display: flex; /*true*/
+    justify-content: space-between; /*true*/
+    align-items: center; /*true*/
+    position: relative; /*true*/
+    min-height: 87px; /*true*/
+}
+
+header .content:before {
+    content: ''; /*true*/
+    position: absolute; /*true*/
+    height: 1px; /*true*/
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--color-p);
+}
+
+header .content .logo img {
+    height: 40px;
+}
+
+header .content nav {
+    flex: 1; /*or flex-grow:1*/
+    display: flex; /*true*/
+    justify-content: flex-end; /*true*/
+    align-items: center; /*true*/
+
+}
+
+.toggle-menu {
+    color: var(--color-p);
+    font-size: 20px; /*true*/
+}
+
+@media (min-width: 768px) {
+    nav .toggle-menu {
+        display: none;
+    }
+}
+
+header .content nav ul {
+    display: flex; /*true*/
+}
+
+@media (max-width: 767px) {
+    header .content nav ul {
+        display: none; /*true*/
+    }
+
+    nav .toggle-menu:hover + ul {
+        display: flex; /*true*/
+        position: absolute; /*true*/
+        flex-direction: column; /*true*/
+        left: 0;
+        width: 100%;
+        top: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+
+}
+
+header .content nav ul li a {
+    color: var(--color-p); /*true*/
+    text-decoration: none; /*true*/
+    font-size: 14px; /*true*/
+    padding: 35px 10px; /*true*/
+    display: block; /*true*/
+    transition: all var(--duration); /*true*/
+    position: relative;
+    z-index: 2;
+}
+
+header .content nav ul a.active, header .content nav ul a:hover {
+    color: var(--main-color); /*true*/
+    border-bottom: 1px solid var(--main-color); /*true*/
+}
+@media (max-width: 767px) {
+    header .content   nav ul li a {
+        padding: 15px ;
+        color: white ;
+    }
+    header .content nav ul a:hover {
+        color: var(--main-color); /*true*/
+        border-bottom: 0px solid var(--main-color); /*true*/
+    }
+}
+
+header .content nav .form {
+    /*width: 40px;*/
+    /*height: 30px;*/
+    /*position: relative;*/
+    padding: 8px 0 8px 20px;
+    border-left: 1px solid var(--color-p); /*true*/
+    margin-left: 30px; /*true*/
+}
+
+header .content nav .form i {
+    font-size: 20px; /*true*/
+    color: var(--color-p);
+}
+
+/*end header */
+.landing {
+    background-image: url("../img/landing.jpg"); /*true*/
+    background-size: cover; /*true*/
+    background-color: #1f2021; /*true*/
+    min-height: 100vh; /*true*/
+    position: relative; /*true*/
+}
+
+.landing .overlay {
+    position: absolute; /*true*/
+    top: 0; /*true*/
+    left: 0; /*true*/
+    width: 100%; /*true*/
+    height: 100%; /*true*/
+    background: rgb(0 0 0 / 40%); /*true*/
+}
+
+.landing .text {
+    background: var(--transparent-color); /*true*/
+    position: absolute; /*true*/
+    left: 0; /*true*/
+    top: 50%; /*true*/
+    transform: translateY(-50%); /*true*/
+    width: 50%; /*true*/
+    padding: 50px; /*zero*/
+    display: flex; /*true*/
+    justify-content: flex-end; /*true*/
+}
+
+.landing .text .content {
+    width: 500px; /*true*/
+    color: white; /*true*/
+    text-transform: capitalize;
+    /*padding: 60px 30px;*/
+}
+
+@media (max-width: 767px) {
+    .landing .text {
+        justify-content: center; /*true*/
+        width: 100%;
+    }
+    .landing .text .content{
+        width: 100%;
+    }
+}
+
+.landing .text .content h2 {
+    font-weight: normal; /*true*/
+    font-size: 32px; /*true*/
+    line-height: 1.5; /*true*/
+    margin-bottom: 20px; /*true*/
+}
+
+.landing .text .content p {
+    font-size: 14px; /*true*/
+    line-height: 2;
+}
+
+.landing .change-background {
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px;
+    cursor: pointer;
+}
+
+.landing .change-background.fa-angle-right {
+    right: 0;
+}
+
+.landing .change-background.fa-angle-left {
+    left: 0;
+}
+.landing .change-background:hover {
+    background-color: #46444480;
+}
+@media (max-width: 767px) {
+    .landing .change-background{
+        display: none;
+    }
+}
+.landing .bullets {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.landing .bullets li:not(.active):hover {
+    background-color: #46444480;
+}
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
